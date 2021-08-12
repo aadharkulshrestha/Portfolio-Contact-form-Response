@@ -52,7 +52,7 @@ function App() {
   }, []);
 
   const { TblContainer, TblHead, TblPagination, recordsAfterPagingAndSorting } =
-    useTable(records, headCells, filterFn);
+    useTable(records, headCells);
 
   const handleRefresh = () => {
     setRecords([]);
