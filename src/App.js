@@ -21,7 +21,6 @@ const useStyles = makeStyles((theme) => ({
     marginRight: "auto",
     marginLeft: "auto",
     marginTop: "50px",
-    padding: "10px",
     margin: "10px",
   },
   searchInput: {
@@ -39,11 +38,7 @@ const headCells = [
 function App() {
   const classes = useStyles();
   const [records, setRecords] = useState([]);
-  const [filterFn, setFilterFn] = useState({
-    fn: (items) => {
-      return items;
-    },
-  });
+  
 
   useEffect(() => {
     db.collection("contact-form")
