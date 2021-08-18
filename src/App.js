@@ -39,7 +39,11 @@ function App() {
   const classes = useStyles();
   const [records, setRecords] = useState([]);
   
-
+  const [filterFn, setFilterFn] = useState({
+    fn: (items) => {
+      return items;
+    },
+  });
   useEffect(() => {
     db.collection("contact-form")
       .get()
@@ -52,7 +56,7 @@ function App() {
   }, []);
 
   const { TblContainer, TblHead, TblPagination, recordsAfterPagingAndSorting } =
-    useTable(records, headCells);
+    useTable(records, headCells, filterFn);
 
   const handleRefresh = () => {
     setRecords([]);
